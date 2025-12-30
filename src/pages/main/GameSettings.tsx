@@ -14,8 +14,16 @@ interface SettingItemProps {
   onClick: () => void
 }
 
+interface ItemColor {
+  icon: string
+  bg: string
+  border: string
+  hover: string
+  shadow: string
+}
+
 const SettingItem = ({ value, icon: Icon, label, color, onClick }: SettingItemProps) => {
-  const colorClasses = {
+  const colorClasses: Record<string, ItemColor> = {
     purple: {
       icon: 'text-purple-400',
       bg: 'bg-purple-500/10',
@@ -46,7 +54,7 @@ const SettingItem = ({ value, icon: Icon, label, color, onClick }: SettingItemPr
     },
   }
 
-  const colors = colorClasses[color] || colorClasses.purple
+  const colors: ItemColor = colorClasses[color] || colorClasses.purple
 
   return (
       <button
@@ -98,7 +106,8 @@ const GameSettings = () => {
   const playersLength = gameSettings.players.length
   const impostorsLength = gameSettings.impostors
 
-  const handleSettingClick = (settingName) => {
+  // remove this
+  const handleSettingClick = (settingName: string) => {
     console.log(`Configurando: ${settingName}`)
   }
 
