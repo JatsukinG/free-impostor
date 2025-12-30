@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        @apply bg-neutral-900
+    }
+
+    .no-selectable {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .back-visibility {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+}
