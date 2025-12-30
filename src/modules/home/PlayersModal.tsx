@@ -1,4 +1,4 @@
-import { JSX, useState } from 'react'
+import { useState } from 'react'
 import NiceModal, { useModal } from '@ebay/nice-modal-react'
 import { Button } from '@/components/forms'
 import { Modal, NiceButton } from '@components'

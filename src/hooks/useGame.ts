@@ -14,7 +14,7 @@ interface UseGameResult {
 const getRandomWordByCategories = (): Word => {
   const categoriesLength = Object.keys(words).length
   const category = Object.keys(words)[Math.floor(Math.random() * categoriesLength)]
-  const relatedWords = words[category]
+  const relatedWords = words[category] as Word[]
   return relatedWords[Math.floor(Math.random() * relatedWords.length)]
 }
 
@@ -24,7 +24,7 @@ const useGame = (): UseGameResult => {
   const { gameSettings } = useGameSettings()
 
   const initGame = () => {
-    let impostorIndexes = []
+    let impostorIndexes: number[] = []
 
     while (impostorIndexes.length < gameSettings.impostors) {
       const impostorIndex = Math.floor(Math.random() * gameSettings.players.length)
@@ -51,7 +51,7 @@ const useGame = (): UseGameResult => {
     navigate('/game')
   }
 
-  const changePreviewCurrentPlayer = (oldCurrentPlayer) => {
+  const changePreviewCurrentPlayer = (oldCurrentPlayer: Player) => {
     if (oldCurrentPlayer.index + 1 > game?.players.length - 1) {
       setGame(prev => ({ ...prev as Game, preview: { enabled: false, currentPlayer: null, hasNextPlayer: false } }))
     } else {

@@ -1,3 +1,4 @@
+import type { IconType } from 'react-icons'
 import { HiSparkles } from 'react-icons/hi2'
 import { PiClock, PiGridFour, PiUsers } from 'react-icons/pi'
 import NiceModal from '@ebay/nice-modal-react'
@@ -5,7 +6,15 @@ import ImpostorsModal from '@/modules/home/ImpostorsModal'
 import PlayersModal from '@/modules/home/PlayersModal'
 import useGameSettings from '@/hooks/useGameSettings'
 
-const SettingItem = ({ value, icon: Icon, label, color, onClick }) => {
+interface SettingItemProps {
+  value: string
+  icon: IconType
+  label: string
+  color: string
+  onClick: () => void
+}
+
+const SettingItem = ({ value, icon: Icon, label, color, onClick }: SettingItemProps) => {
   const colorClasses = {
     purple: {
       icon: 'text-purple-400',

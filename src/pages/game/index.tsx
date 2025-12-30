@@ -6,10 +6,10 @@ import FlipCard from '@/modules/home/FlipCard'
 
 const GamePage = () => {
   const { game, changePreviewCurrentPlayer } = useGame()
-  const hasNextPlayer = game.preview.hasNextPlayer
-  const previewEnabled = game.preview.enabled
-  const currentPlayer = game.preview.currentPlayer
-  const initialPlayer = game.initialPlayer
+  const hasNextPlayer = game?.preview.hasNextPlayer
+  const previewEnabled = game?.preview.enabled
+  const currentPlayer = game?.preview.currentPlayer
+  const initialPlayer = game?.initialPlayer
 
   return (
       <div className="px-4 py-12 flex flex-col min-h-screen">
@@ -29,9 +29,9 @@ const GamePage = () => {
             !previewEnabled &&
             <div className="my-auto text-center flex flex-col items-center">
                 <p className="text-white text-2xl font-medium">
-                    Empieza <span className="text-purple-600">{initialPlayer.name}</span>
+                    Empieza <span className="text-purple-600">{initialPlayer?.name}</span>
                 </p>
-                <Loader className="w-full"/>
+                <Loader/>
                 <NiceButton>
                     Votar
                 </NiceButton>

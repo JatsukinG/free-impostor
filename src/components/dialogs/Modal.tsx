@@ -1,11 +1,16 @@
-import { type FC, Fragment, PropsWithChildren, useEffect } from 'react'
+import { Fragment, type ReactNode, useEffect } from 'react'
 import { clsx } from 'clsx'
 import { IoClose } from 'react-icons/io5'
 import { Dialog, Transition } from '@headlessui/react'
 
+interface PropsWithChildren {
+  children: ReactNode
+  className?: string
+}
+
 type ModalSizes = 'xs' | 'sm' | 'md' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | 'full'
 
-interface Props {
+interface Props extends PropsWithChildren{
   show: boolean
   size?: ModalSizes
   onClose: () => void
@@ -25,7 +30,7 @@ const modalSizes: Record<ModalSizes, string> = {
   full: 'max-w-full',
 }
 
-const ModalHeader: FC<PropsWithChildren<{ className?: string }>> = ({ children, className }) => {
+const ModalHeader = ({ children, className }: PropsWithChildren) => {
   return (
       <Dialog.Title as="div" className={clsx(['p-4 w-full border-b border-neutral-700 text-purple-400', className])}>
         {children}
@@ -33,7 +38,7 @@ const ModalHeader: FC<PropsWithChildren<{ className?: string }>> = ({ children, 
   )
 }
 
-const ModalBody: FC<PropsWithChildren<{ className?: string }>> = ({ children, className }) => {
+const ModalBody = ({ children, className }: PropsWithChildren) => {
   return (
       <div className={clsx(['p-4 w-full', className])}>
         {children}
@@ -41,7 +46,7 @@ const ModalBody: FC<PropsWithChildren<{ className?: string }>> = ({ children, cl
   )
 }
 
-const ModalFooter: FC<PropsWithChildren<{ className?: string }>> = ({ children, className }) => {
+const ModalFooter = ({ children, className }: PropsWithChildren) => {
   return (
       <div className={clsx(['p-4 w-full border-t border-neutral-700', className])}>
         {children}
@@ -49,7 +54,7 @@ const ModalFooter: FC<PropsWithChildren<{ className?: string }>> = ({ children, 
   )
 }
 
-const ModalComponent: FC<PropsWithChildren<Props>> = (({ show, size = 'sm', onClose, children }) => {
+const ModalComponent = (({ show, size = 'sm', onClose, children }: Props) => {
   useEffect(() => {
     if (show) {
       document.body.classList.add('no-scroll')

@@ -4,7 +4,7 @@ import useGame from '@/hooks/useGame'
 
 const FlipCard = () => {
   const { game } = useGame()
-  const currentPlayer = game.preview.currentPlayer
+  const currentPlayer = game?.preview.currentPlayer
 
   return (
       <div
@@ -30,7 +30,7 @@ const FlipCard = () => {
                     <p className="text-center text-white">Eres un:</p>
                     <p className="text-center text-blue-400 text-2xl font-bold">Civíl</p>
                     <p className="mt-8 text-center text-white">La palabra es:</p>
-                    <p className="text-center text-purple-600 text-4xl font-bold">{game.word.label}</p>
+                    <p className="text-center text-purple-600 text-4xl font-bold">{game?.word.label}</p>
                   </div>
             }
           </div>
