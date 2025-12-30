@@ -1,17 +1,24 @@
+import type { Game, Player, Word } from '@/types'
 import { useAtom } from 'jotai'
 import { useNavigate } from 'react-router-dom'
 import words from '@/constants/words.json'
 import { gameState } from '@/atoms/gameState'
 import useGameSettings from '@/hooks/useGameSettings'
 
-const getRandomWordByCategories = () => {
+interface UseGameResult {
+  game: Game | null
+  initGame: () => void
+  changePreviewCurrentPlayer: (oldCurrentPlayer: Player) => void
+}
+
+const getRandomWordByCategories = (): Word => {
   const categoriesLength = Object.keys(words).length
   const category = Object.keys(words)[Math.floor(Math.random() * categoriesLength)]
   const relatedWords = words[category]
   return relatedWords[Math.floor(Math.random() * relatedWords.length)]
 }
 
-const useGame = () => {
+const useGame = (): UseGameResult => {
   const navigate = useNavigate()
   const [game, setGame] = useAtom(gameState)
   const { gameSettings } = useGameSettings()
@@ -26,7 +33,7 @@ const useGame = () => {
       }
     }
 
-    const players = gameSettings.players.map((playerName, i) => ({
+    const players: Player[] = gameSettings.players.map((playerName, i) => ({
       name: playerName,
       isImpostor: impostorIndexes.includes(i),
       index: i,
@@ -45,8 +52,8 @@ const useGame = () => {
   }
 
   const changePreviewCurrentPlayer = (oldCurrentPlayer) => {
-    if (oldCurrentPlayer.index + 1 > game.players.length - 1) {
-      setGame(prev => ({ ...prev, preview: { enabled: false, currentPlayer: null } }))
+    if (oldCurrentPlayer.index + 1 > game?.players.length - 1) {
+      setGame(prev => ({ ...prev as Game, preview: { enabled: false, currentPlayer: null, hasNextPlayer: false } }))
     } else {
       setGame(prev => ({
         ...prev,

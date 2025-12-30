@@ -1,20 +1,10 @@
 import './flip-card.css'
-import useGame from '@/hooks/useGame'
-import { useRef } from 'react'
 import { Text } from '@components'
+import useGame from '@/hooks/useGame'
 
 const FlipCard = () => {
-  const ref = useRef()
   const { game } = useGame()
   const currentPlayer = game.preview.currentPlayer
-
-  const showContent = () => {
-    ref.current.classList.add('visible')
-  }
-
-  const hideContent = () => {
-    ref.current.classList.remove('visible')
-  }
 
   return (
       <div
@@ -28,7 +18,7 @@ const FlipCard = () => {
           <div
               className="p-8 w-full aspect-[4/3] absolute inset-0 rotate-y-180 back-visibility flex flex-col items-center justify-center">
             {
-              currentPlayer.isImpostor
+              currentPlayer?.isImpostor
                   ?
                   <div>
                     <p className="text-center text-white">Eres un:</p>

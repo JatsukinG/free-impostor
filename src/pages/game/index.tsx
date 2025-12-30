@@ -1,3 +1,4 @@
+import type { Player } from '@/types'
 import useGame from '@/hooks/useGame'
 import Loader from '@/components/Loader'
 import { NiceButton, Text } from '@components'
@@ -16,10 +17,10 @@ const GamePage = () => {
             previewEnabled &&
             <div className="flex flex-col items-center gap-8">
                 <Text size="2xl" weight="bold">
-                  {currentPlayer.name}
+                  {currentPlayer?.name}
                 </Text>
                 <FlipCard/>
-                <NiceButton onClick={() => changePreviewCurrentPlayer(game.preview.currentPlayer)}>
+                <NiceButton onClick={() => changePreviewCurrentPlayer(currentPlayer as Player)}>
                   {hasNextPlayer ? 'Siguiente jugador' : 'Empezar juego'}
                 </NiceButton>
             </div>
