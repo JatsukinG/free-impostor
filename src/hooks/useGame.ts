@@ -13,7 +13,8 @@ interface UseGameResult {
 
 const getRandomWordByCategories = (): Word => {
   const categoriesLength = Object.keys(words).length
-  const category = Object.keys(words)[Math.floor(Math.random() * categoriesLength)]
+  const category: string = Object.keys(words)[Math.floor(Math.random() * categoriesLength)]
+  // @ts-ignore
   const relatedWords: Word[] = words[category] as Word[]
   return relatedWords[Math.floor(Math.random() * relatedWords.length)]
 }
