@@ -13,6 +13,7 @@ const defaultGame = {
     hasNextPlayer: false,
   },
   initialPlayer: null,
+  vote: false
 }
 
 export const gameState = atomWithStorage<Game>('gameState', defaultGame)

@@ -24,9 +24,15 @@ interface Preview {
   hasNextPlayer: boolean
 }
 
+interface Vote {
+  enabled: boolean
+  votedPlayer: Player | null
+}
+
 export interface Game {
   players: Player[]
   word: Word
   preview: Preview
   initialPlayer: Player | null,
+  vote: Vote
 }

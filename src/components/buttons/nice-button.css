@@ -21,6 +21,15 @@
     padding: 12px 18px;
 }
 
+.button.disabled {
+    background: radial-gradient(
+            65.28% 65.28% at 50% 100%,
+            rgba(154, 154, 154, 0.8) 0%,
+            rgba(223, 113, 255, 0) 100%
+    ),
+    linear-gradient(0deg, #a6a6a6, #505050);
+}
+
 .button::before,
 .button::after {
     content: "";
@@ -49,6 +58,17 @@
     ),
     linear-gradient(0deg, #7a5af8, #7a5af8);
 }
+
+.button.disabled::after {
+    --space: 2px;
+    background: radial-gradient(
+            65.28% 65.28% at 50% 100%,
+            rgba(148, 148, 148, 0.8) 0%,
+            rgba(223, 113, 255, 0) 100%
+    ),
+    linear-gradient(0deg, #6b6b6b, #545454);
+}
+
 
 .button:active {
     transform: scale(0.95);

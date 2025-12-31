@@ -8,6 +8,9 @@ import useGameSettings from '@/hooks/useGameSettings'
 interface UseGameResult {
   game: Game | null
   initGame: () => void
+  initVote: () => void
+  resetVote: () => void
+  voteForPlayer: (player: Player) => void
   changePreviewCurrentPlayer: (oldCurrentPlayer: Player) => void
 }
 
@@ -48,6 +51,10 @@ const useGame = (): UseGameResult => {
         hasNextPlayer: true,
       },
       initialPlayer: players[Math.floor(Math.random() * players.length)],
+      vote: {
+        enabled: false,
+        votedPlayer: null,
+      },
     })
     navigate('/game')
   }
@@ -67,9 +74,28 @@ const useGame = (): UseGameResult => {
     }
   }
 
+  const initVote = () => {
+    setGame(prev => ({ ...prev, vote: { enabled: true, votedPlayer: null } }))
+  }
+
+  const voteForPlayer = (player: Player) => {
+    setGame(prev => ({
+      ...prev,
+      players: prev.players.filter(py => py.index !== player.index),
+      vote: { enabled: true, votedPlayer: player },
+    }))
+  }
+
+  const resetVote = () => {
+    setGame(prev => ({ ...prev, vote: { enabled: false, votedPlayer: null } }))
+  }
+
   return {
     game,
     initGame,
+    initVote,
+    resetVote,
+    voteForPlayer,
     changePreviewCurrentPlayer,
   }
 }

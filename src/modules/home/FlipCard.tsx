@@ -8,15 +8,15 @@ const FlipCard = () => {
 
   return (
       <div
-          className="group w-full aspect-[4/3] bg-gradient-to-br from-violet-700/10 to-purple-900/10 rounded-md no-selectable">
+          className="group w-full aspect-[4/3] no-selectable">
         <div className="relative w-full aspect-[4/3] group-active:rotate-y-180 duration-300 flip-card-inner">
-          <div className="p-8 w-full aspect-[4/3] absolute inset-0 grid place-content-center back-visibility">
+          <div className="p-8 w-full aspect-[4/3] absolute inset-0 grid place-content-center back-visibility bg-gradient-to-br from-violet-700/10 to-purple-900/10 rounded-md">
             <Text color="gray" size="lg">
               Haz click para revelar
             </Text>
           </div>
           <div
-              className="p-8 w-full aspect-[4/3] absolute inset-0 rotate-y-180 back-visibility flex flex-col items-center justify-center">
+              className="p-8 w-full aspect-[4/3] absolute inset-0 rotate-y-180 back-visibility flex flex-col items-center justify-center bg-gradient-to-br from-violet-700/10 to-purple-900/10 rounded-md">
             {
               currentPlayer?.isImpostor
                   ?

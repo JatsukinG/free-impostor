@@ -11,7 +11,7 @@ const Welcome = () => {
         <img
             alt="detective"
             src="/imp.png"
-            className="my-8 text-red-400 w-48"
+            className="my-8 text-red-400 w-32"
         />
         <NiceButton onClick={() => initGame()}>
           ¡Comenzar Juego!
