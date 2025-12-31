@@ -81,7 +81,7 @@ const useGame = (): UseGameResult => {
   const voteForPlayer = (player: Player) => {
     setGame(prev => ({
       ...prev,
-      players: prev.players.filter(py => py.index !== player.index),
+      players: prev.players.filter(py => py.index !== player.index) as Player[],
       vote: { enabled: true, votedPlayer: player },
     }))
   }

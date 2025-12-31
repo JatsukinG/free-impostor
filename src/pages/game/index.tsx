@@ -8,6 +8,8 @@ import useGame from '@/hooks/useGame'
 import Loader from '@/components/Loader'
 import { NiceButton, Text } from '@components'
 import FlipCard from '@/modules/home/FlipCard'
+import NiceModal from '@ebay/nice-modal-react'
+import EndGameConfirmationModal from '@/pages/game/EndGameConfirmationModal'
 
 const GamePage = () => {
   const navigate = useNavigate()
@@ -118,6 +120,15 @@ const GamePage = () => {
               }
             </div>
         }
+        <button
+            onClick={async () => {
+              const res = await NiceModal.show(EndGameConfirmationModal)
+              if (res)
+                navigate('/')
+            }}
+            className="fixed top-2 right-2 size-12 rounded-full grid place-content-center text-2xl text-white">
+          <IoMdCloseCircle/>
+        </button>
       </div>
   )
 }
