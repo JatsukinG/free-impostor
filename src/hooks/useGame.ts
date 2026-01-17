@@ -1,7 +1,7 @@
 import type { Game, Player, Word } from '@/types'
 import { useAtom } from 'jotai'
 import { useNavigate } from 'react-router-dom'
-import words from '@/constants/words.json'
+import words from '@/constants/old-words.json'
 import { gameState } from '@/atoms/gameState'
 import useGameSettings from '@/hooks/useGameSettings'
 
