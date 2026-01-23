@@ -1,5 +1,4 @@
 import type { IconType } from 'react-icons'
-import { HiSparkles } from 'react-icons/hi2'
 import { PiClock, PiGridFour, PiUsers } from 'react-icons/pi'
 import NiceModal from '@ebay/nice-modal-react'
 import ImpostorsModal from '@/modules/home/ImpostorsModal'
