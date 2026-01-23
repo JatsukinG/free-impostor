@@ -1,14 +1,14 @@
 import type { Player } from '@/types'
 import { useState } from 'react'
 import clsx from 'clsx'
+import NiceModal from '@ebay/nice-modal-react'
 import { FaCheckCircle } from 'react-icons/fa'
-import { IoMdClose, IoMdCloseCircle } from 'react-icons/io'
 import { useNavigate } from 'react-router-dom'
+import { IoMdClose, IoMdCloseCircle } from 'react-icons/io'
 import useGame from '@/hooks/useGame'
 import Loader from '@/components/Loader'
 import { NiceButton, Text } from '@components'
 import FlipCard from '@/modules/home/FlipCard'
-import NiceModal from '@ebay/nice-modal-react'
 import EndGameConfirmationModal from '@/pages/game/EndGameConfirmationModal'
 
 const GamePage = () => {
