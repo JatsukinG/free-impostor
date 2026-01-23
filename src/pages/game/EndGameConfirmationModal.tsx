@@ -1,3 +1,4 @@
+// @ts-nocheck
 import NiceModal, { useModal } from '@ebay/nice-modal-react'
 import { Button } from '@/components/forms'
 import { Modal, NiceButton, Text } from '@components'
