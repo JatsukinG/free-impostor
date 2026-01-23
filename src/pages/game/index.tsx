@@ -53,7 +53,7 @@ const GamePage = () => {
         }
         {
             game?.vote.enabled &&
-            <div>
+            <div className="my-auto">
               {
                 !!game.vote.votedPlayer ?
                     <div className="animate-in">
@@ -98,19 +98,19 @@ const GamePage = () => {
                       </NiceButton>
                     </div>
                     :
-                    <div className="animate-in">
-                      <p className="text-purple-600 text-center text-xl font-medium">
+                    <div className="animate-in my-auto">
+                      <p className="text-purple-500 text-center text-2xl font-nold">
                         ¿Quién crees que es el impostor?
                       </p>
-                      <div className="my-8 grid grid-cols-2 gap-4">
+                      <div className="my-24 grid grid-cols-2 gap-4">
                         {
                           game.players.map((player) => (
                               <div
                                   key={player.index}
                                   onClick={() => setVotedPlayer(player)}
                                   className={clsx([
-                                    'border p-2 rounded-md',
-                                    votedPlayer?.index === player.index ? 'border-purple-600' : 'border-neutral-700',
+                                    'border-2 p-2 rounded-md bg-white dark:bg-slate-700 grid place-content-center text-center',
+                                    votedPlayer?.index === player.index ? 'border-purple-500' : 'border-transparent',
                                   ])}
                               >
                                 <Text weight="medium">{player.name}</Text>

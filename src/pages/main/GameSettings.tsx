@@ -66,7 +66,7 @@ const SettingItem = ({ value, icon: Icon, label, color, onClick }: SettingItemPr
             <Text as="span" className="uppercase tracking-wide" color="gray" size="xs" weight="semibold">
               {label}
             </Text>
-            <Text as="span" className="uppercase tracking-wide" size="base" weight="extrabold">
+            <Text as="span" className="uppercase tracking-wide" size="sm" weight="extrabold">
               {value}
             </Text>
           </div>

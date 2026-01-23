@@ -32,7 +32,7 @@ const modalSizes: Record<ModalSizes, string> = {
 
 const ModalHeader = ({ children, className }: PropsWithChildren) => {
   return (
-      <Dialog.Title as="div" className={clsx(['p-4 w-full text-purple-600 text-lg', className])}>
+      <Dialog.Title as="div" className={clsx(['p-4 w-full text-purple-500 text-lg font-bold', className])}>
         {children}
       </Dialog.Title>
   )
@@ -94,7 +94,7 @@ const ModalComponent = (({ show, size = 'sm', onClose, children }: Props) => {
             >
               <Dialog.Panel
                   className={clsx([
-                    'relative w-full m-auto text-left flex flex-col items-center rounded-lg bg-white dark:bg-neutral-900',
+                    'relative w-full m-auto text-left flex flex-col items-center rounded-lg bg-white dark:bg-slate-900',
                     'transform transition-all',
                     modalSizes[size],
                   ])}

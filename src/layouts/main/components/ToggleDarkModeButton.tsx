@@ -32,7 +32,7 @@ const ToggleDarkModeButton = () => {
       <button
           aria-label="Toggle theme"
           onClick={() => toggleDarkMode()}
-          className="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-all"
+          className="p-2 rounded-lg bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-all"
       >
         <Text className="flex items-center gap-2" weight="medium">
           <span>
