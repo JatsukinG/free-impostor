@@ -1,6 +1,7 @@
 import './flip-card.css'
 import { Text } from '@components'
 import useGame from '@/hooks/useGame'
+import { MdOutlineFingerprint } from 'react-icons/md'
 
 const FlipCard = () => {
   const { game } = useGame()
@@ -8,29 +9,35 @@ const FlipCard = () => {
 
   return (
       <div
-          className="group w-full aspect-[4/3] no-selectable">
-        <div className="relative w-full aspect-[4/3] group-active:rotate-y-180 duration-300 flip-card-inner">
-          <div className="p-8 w-full aspect-[4/3] absolute inset-0 grid place-content-center back-visibility bg-gradient-to-br from-violet-700/10 to-purple-900/10 rounded-md">
-            <Text color="gray" size="lg">
-              Haz click para revelar
+          className="flex-grow group w-full no-selectable flex flex-col">
+        <div
+            className="flex-grow relative w-full h-full group-active:rotate-y-180 duration-300 flip-card-inner flex flex-col">
+          <div
+              className="p-8 w-full absolute inset-0 back-visibility bg-white dark:bg-slate-800 rounded-4xl flex flex-col justify-center items-center gap-4">
+            <span
+                className="block size-24 bg-purple-600/20 rounded-full grid place-content-center text-4xl text-purple-600">
+              <MdOutlineFingerprint/>
+            </span>
+            <Text size="lg" weight="medium">
+              Toca para revelar
             </Text>
           </div>
           <div
-              className="p-8 w-full aspect-[4/3] absolute inset-0 rotate-y-180 back-visibility flex flex-col items-center justify-center bg-gradient-to-br from-violet-700/10 to-purple-900/10 rounded-md">
+              className="flex-grow p-8 w-full h-full absolute inset-0 rotate-y-180 back-visibility flex flex-col items-center justify-center bg-white dark:bg-slate-800 rounded-4xl">
             {
               currentPlayer?.isImpostor
                   ?
                   <div>
-                    <p className="text-center text-white">Eres un:</p>
-                    <p className="text-center text-red-400 text-4xl font-bold">Impostor</p>
-                    <p className="mt-8 text-center text-white">No tienes palabra</p>
+                    <Text className="text-center">Eres un:</Text>
+                    <Text className="text-center" color="red" size="4xl" weight="bold">Impostor</Text>
+                    <Text className="mt-8 text-center">No tienes palabra</Text>
                   </div>
                   :
                   <div>
-                    <p className="text-center text-white">Eres un:</p>
-                    <p className="text-center text-blue-400 text-2xl font-bold">Civíl</p>
-                    <p className="mt-8 text-center text-white">La palabra es:</p>
-                    <p className="text-center text-purple-600 text-4xl font-bold">{game?.word.label}</p>
+                    <Text className="text-center">Eres un:</Text>
+                    <Text className="text-center" color="blue" size="2xl" weight="bold">Civíl</Text>
+                    <Text className="mt-8 text-center">La palabra es:</Text>
+                    <Text className="text-center" color="violet" size="4xl" weight="bold">{game?.word.label}</Text>
                   </div>
             }
           </div>

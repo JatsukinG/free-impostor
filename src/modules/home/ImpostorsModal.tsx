@@ -31,7 +31,7 @@ const ImpostorsModal = NiceModal.create(() => {
         </Modal.Body>
         <Modal.Footer>
           <div className="flex w-full justify-end gap-2">
-            <Button color="neutral" size="lg" onClick={() => modal.remove()}>
+            <Button variant="outline" color="neutral" size="lg" onClick={() => modal.remove()}>
               Cancelar
             </Button>
             <div>

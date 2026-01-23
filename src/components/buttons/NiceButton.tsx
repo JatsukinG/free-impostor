@@ -13,7 +13,7 @@ const NiceButton = ({ children, disabled = false, onClick }: Props) => {
       <button
           type="button"
           disabled={!!disabled}
-          className={clsx(['button w-full', disabled && 'disabled'])}
+          className={clsx(['button w-full shrink-0', disabled && 'disabled'])}
           onClick={() => onClick?.()}
       >
         <div className="points_wrapper">

@@ -32,7 +32,7 @@ const modalSizes: Record<ModalSizes, string> = {
 
 const ModalHeader = ({ children, className }: PropsWithChildren) => {
   return (
-      <Dialog.Title as="div" className={clsx(['p-4 w-full border-b border-neutral-700 text-purple-400', className])}>
+      <Dialog.Title as="div" className={clsx(['p-4 w-full text-purple-600 text-lg', className])}>
         {children}
       </Dialog.Title>
   )
@@ -40,7 +40,7 @@ const ModalHeader = ({ children, className }: PropsWithChildren) => {
 
 const ModalBody = ({ children, className }: PropsWithChildren) => {
   return (
-      <div className={clsx(['p-4 w-full', className])}>
+      <div className={clsx(['p-4 w-full max-h-96 overflow-y-auto', className])}>
         {children}
       </div>
   )
@@ -48,7 +48,7 @@ const ModalBody = ({ children, className }: PropsWithChildren) => {
 
 const ModalFooter = ({ children, className }: PropsWithChildren) => {
   return (
-      <div className={clsx(['p-4 w-full border-t border-neutral-700', className])}>
+      <div className={clsx(['p-4 w-full', className])}>
         {children}
       </div>
   )
@@ -94,7 +94,7 @@ const ModalComponent = (({ show, size = 'sm', onClose, children }: Props) => {
             >
               <Dialog.Panel
                   className={clsx([
-                    'relative w-full m-auto text-left flex flex-col items-center rounded-lg bg-neutral-900',
+                    'relative w-full m-auto text-left flex flex-col items-center rounded-lg bg-white dark:bg-neutral-900',
                     'transform transition-all',
                     modalSizes[size],
                   ])}

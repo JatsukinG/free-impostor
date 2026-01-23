@@ -32,7 +32,7 @@ const solidColors: Record<Colors, string> = {
 }
 
 const outlineColors: Record<Colors, string> = {
-  neutral: 'border border-neutral-400 text-neutral-800 hover:bg-neutral-100',
+  neutral: 'border border-slate-400 text-slate-800 dark:text-white hover:bg-slate-100',
   green: 'border border-green-600 text-green-600 hover:bg-green-50',
   blue: 'border border-blue-600 text-blue-600 hover:bg-blue-50',
   red: 'border border-red-600 text-red-600 hover:bg-red-50',

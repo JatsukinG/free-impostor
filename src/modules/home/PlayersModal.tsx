@@ -42,7 +42,7 @@ const ImpostorsModal = NiceModal.create(() => {
                   <div className="w-full flex gap-2" key={i}>
                     <input
                         type="text"
-                        className="!h-12 flex-grow border border-neutral-800 focus:ring-0 rounded-md p-2 outline-purple-800 text-white font-medium"
+                        className="!h-12 flex-grow border border-slate-200 dark:border-slate-700 focus:ring-0 rounded-md p-2 outline-purple-800 text-slate-800 dark:text-white font-medium"
                         value={player}
                         onChange={(e) => {
                           const value = e.target.value
@@ -64,7 +64,7 @@ const ImpostorsModal = NiceModal.create(() => {
             <div className="w-full flex gap-2">
               <input
                   type="text"
-                  className="!h-12 flex-grow border border-neutral-800 focus:ring-0 rounded-md p-2 outline-purple-800 text-white font-medium"
+                  className="!h-12 flex-grow border border-slate-200 dark:border-slate-700 focus:ring-0 rounded-md p-2 outline-purple-800 text-slate-800 dark:text-white font-medium"
                   placeholder="Nuevo jugador"
                   value={newPlayerValue}
                   onChange={(e) => {
@@ -82,7 +82,7 @@ const ImpostorsModal = NiceModal.create(() => {
         </Modal.Body>
         <Modal.Footer>
           <div className="flex w-full justify-end gap-2">
-            <Button color="neutral" size="lg" onClick={() => modal.remove()}>
+            <Button variant="outline" color="neutral" size="lg" onClick={() => modal.remove()}>
               Cancelar
             </Button>
             <div>

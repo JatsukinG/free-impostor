@@ -2,7 +2,7 @@ import type { Player } from '@/types'
 import { useState } from 'react'
 import clsx from 'clsx'
 import { FaCheckCircle } from 'react-icons/fa'
-import { IoMdCloseCircle } from 'react-icons/io'
+import { IoMdClose, IoMdCloseCircle } from 'react-icons/io'
 import { useNavigate } from 'react-router-dom'
 import useGame from '@/hooks/useGame'
 import Loader from '@/components/Loader'
@@ -24,10 +24,15 @@ const GamePage = () => {
       <div className="px-4 py-12 flex flex-col min-h-screen">
         {
             (previewEnabled && !game?.vote.enabled) &&
-            <div key={currentPlayer?.index ?? 1} className="flex flex-col items-center gap-8 animate-in">
-                <Text size="2xl" weight="bold">
-                  {currentPlayer?.name}
-                </Text>
+            <div key={currentPlayer?.index ?? 1} className="flex-grow flex flex-col items-center gap-32 animate-in">
+                <div className="shrink-0 text-center">
+                    <Text size="2xl" color="violet" weight="bold">
+                      {currentPlayer?.name}
+                    </Text>
+                    <Text size="sm" color="gray" weight="medium">
+                        Asegurate de estar solo
+                    </Text>
+                </div>
                 <FlipCard/>
                 <NiceButton onClick={() => changePreviewCurrentPlayer(currentPlayer as Player)}>
                   {hasNextPlayer ? 'Siguiente jugador' : 'Empezar juego'}
@@ -37,9 +42,9 @@ const GamePage = () => {
         {
             (!previewEnabled && !game?.vote.enabled) &&
             <div className="my-auto text-center flex flex-col items-center animate-in">
-                <p className="text-white text-2xl font-medium">
+                <Text size="2xl" weight="medium">
                     Empieza <span className="text-purple-600">{initialPlayer?.name}</span>
-                </p>
+                </Text>
                 <Loader/>
                 <NiceButton onClick={() => initVote()}>
                     Votar
@@ -58,7 +63,7 @@ const GamePage = () => {
                               <span className="text-5xl text-green-600 text-center mx-auto">
                                 <FaCheckCircle/>
                               </span>
-                              <p className="text-white text-3xl text-center">
+                              <p className="text-slate-700 dar:text-white text-3xl text-center">
                                 <span className="text-purple-600 font-bold">
                                   {game.vote.votedPlayer.name}
                                 </span>
@@ -71,7 +76,7 @@ const GamePage = () => {
                               <span className="text-5xl text-red-600 text-center mx-auto">
                                 <IoMdCloseCircle/>
                               </span>
-                              <p className="text-white text-3xl text-center">
+                              <p className="text-slate-700 dark:text-white text-3xl text-center">
                                 <span className="text-purple-600 font-bold">
                                   {game.vote.votedPlayer.name}
                                 </span>
@@ -108,7 +113,7 @@ const GamePage = () => {
                                     votedPlayer?.index === player.index ? 'border-purple-600' : 'border-neutral-700',
                                   ])}
                               >
-                                <p className="text-white font-medium">{player.name}</p>
+                                <Text weight="medium">{player.name}</Text>
                               </div>
                           ))
                         }
@@ -126,8 +131,8 @@ const GamePage = () => {
               if (res)
                 navigate('/')
             }}
-            className="fixed top-2 right-2 size-12 rounded-full grid place-content-center text-2xl text-white">
-          <IoMdCloseCircle/>
+            className="fixed top-4 right-4 size-10 rounded-full grid place-content-center text-2xl text-slate-700 dark:text-white bg-slate-200 dark:bg-slate-700">
+          <IoMdClose/>
         </button>
       </div>
   )

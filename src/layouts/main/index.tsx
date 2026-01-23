@@ -6,8 +6,10 @@ interface Props {
 
 const DashboardLayout = ({ children }: Props) => {
   return (
-      <div className="w-full min-h-screen">
+      <div className="w-full min-h-screen flex">
+        <div className="mx-auto w-full max-w-sm min-h-screen">
         {children}
+        </div>
       </div>
   )
 }
