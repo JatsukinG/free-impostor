@@ -86,11 +86,6 @@ const GameSettings = () => {
   const impostorsLength = gameSettings.impostors
   const categoriesLength = gameSettings.categories.length
 
-  // remove this
-  const handleSettingClick = (settingName: string) => {
-    console.log(`Configurando: ${settingName}`)
-  }
-
   return (
       <div className="px-4 py-6">
         {/* Título mejorado */}
