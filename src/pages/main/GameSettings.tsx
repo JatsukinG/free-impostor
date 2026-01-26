@@ -1,6 +1,7 @@
 import type { IconType } from 'react-icons'
-import { PiClock, PiGridFour, PiUsers } from 'react-icons/pi'
+import { PiGridFour, PiUsers } from 'react-icons/pi'
 import NiceModal from '@ebay/nice-modal-react'
+import CategoriesModal from '@/modules/home/CategoriesModal'
 import ImpostorsModal from '@/modules/home/ImpostorsModal'
 import PlayersModal from '@/modules/home/PlayersModal'
 import useGameSettings from '@/hooks/useGameSettings'
@@ -83,6 +84,7 @@ const GameSettings = () => {
   const { gameSettings } = useGameSettings()
   const playersLength = gameSettings.players.length
   const impostorsLength = gameSettings.impostors
+  const categoriesLength = gameSettings.categories.length
 
   // remove this
   const handleSettingClick = (settingName: string) => {
@@ -123,17 +125,17 @@ const GameSettings = () => {
           <SettingItem
               icon={PiGridFour}
               label="Categorías"
-              value="3 Categorías"
+              value={`${categoriesLength} Categoría${categoriesLength > 1 ? 's' : ''}`}
               color="blue"
-              onClick={() => handleSettingClick('categorias')}
+              onClick={() => NiceModal.show(CategoriesModal)}
           />
-          <SettingItem
-              icon={PiClock}
-              label="Tiempo"
-              value="60 segundos"
-              color="emerald"
-              onClick={() => handleSettingClick('tiempo')}
-          />
+          {/*<SettingItem*/}
+          {/*    icon={PiClock}*/}
+          {/*    label="Tiempo"*/}
+          {/*    value={`${gameSettings.time} segundos`}*/}
+          {/*    color="emerald"*/}
+          {/*    onClick={() => handleSettingClick('tiempo')}*/}
+          {/*/>*/}
         </div>
         <div className="mt-2 p-2 flex items-center justify-between">
           <Text weight="bold">

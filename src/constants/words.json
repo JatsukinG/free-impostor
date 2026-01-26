@@ -160,5 +160,583 @@
       "label": "Router",
       "clue": "Camino"
     }
+  ],
+  "animals": [
+    {
+      "label": "Perro",
+      "clue": "Ladra"
+    },
+    {
+      "label": "Gato",
+      "clue": "Maúlla"
+    },
+    {
+      "label": "Elefante",
+      "clue": "Gigante"
+    },
+    {
+      "label": "León",
+      "clue": "Rey"
+    },
+    {
+      "label": "Tigre",
+      "clue": "Rayas"
+    },
+    {
+      "label": "Jirafa",
+      "clue": "Cuello largo"
+    },
+    {
+      "label": "Mono",
+      "clue": "Trepa"
+    },
+    {
+      "label": "Delfín",
+      "clue": "Inteligente"
+    },
+    {
+      "label": "Tiburón",
+      "clue": "Océano"
+    },
+    {
+      "label": "Ballena",
+      "clue": "Gigante"
+    },
+    {
+      "label": "Serpiente",
+      "clue": "Repta"
+    },
+    {
+      "label": "Águila",
+      "clue": "Vuela"
+    },
+    {
+      "label": "Lobo",
+      "clue": "Aúlla"
+    },
+    {
+      "label": "Oso",
+      "clue": "Hiberna"
+    },
+    {
+      "label": "Conejo",
+      "clue": "Salta"
+    },
+    {
+      "label": "Caballo",
+      "clue": "Corre"
+    },
+    {
+      "label": "Vaca",
+      "clue": "Leche"
+    },
+    {
+      "label": "Cerdo",
+      "clue": "Granja"
+    },
+    {
+      "label": "Gallina",
+      "clue": "Huevos"
+    },
+    {
+      "label": "Pato",
+      "clue": "Nada"
+    },
+    {
+      "label": "Ratón",
+      "clue": "Pequeño"
+    },
+    {
+      "label": "Murciélago",
+      "clue": "Nocturno"
+    },
+    {
+      "label": "Pingüino",
+      "clue": "Frío"
+    },
+    {
+      "label": "Koala",
+      "clue": "Dormilón"
+    },
+    {
+      "label": "Cebra",
+      "clue": "Rayas"
+    },
+    {
+      "label": "Hipopótamo",
+      "clue": "Pesado"
+    },
+    {
+      "label": "Rinoceronte",
+      "clue": "Cuerno"
+    },
+    {
+      "label": "Camello",
+      "clue": "Desierto"
+    },
+    {
+      "label": "Loro",
+      "clue": "Habla"
+    },
+    {
+      "label": "Tortuga",
+      "clue": "Lenta"
+    },
+    {
+      "label": "Pulpo",
+      "clue": "Tentáculos"
+    },
+    {
+      "label": "Cangrejo",
+      "clue": "Pinzas"
+    },
+    {
+      "label": "Cabra",
+      "clue": "Montaña"
+    },
+    {
+      "label": "Oveja",
+      "clue": "Lana"
+    },
+    {
+      "label": "Burro",
+      "clue": "Cargar"
+    },
+    {
+      "label": "Pez",
+      "clue": "Aletas"
+    },
+    {
+      "label": "Iguana",
+      "clue": "Reptil"
+    },
+    {
+      "label": "Pantera",
+      "clue": "Sigilo"
+    },
+    {
+      "label": "Jaguar",
+      "clue": "Manchas"
+    },
+    {
+      "label": "Zorro",
+      "clue": "Astuto"
+    },
+    {
+      "label": "Hámster",
+      "clue": "Rueda"
+    },
+    {
+      "label": "Topo",
+      "clue": "Tierra"
+    },
+    {
+      "label": "Foca",
+      "clue": "Aplaude"
+    },
+    {
+      "label": "Leopardo",
+      "clue": "Velocidad"
+    },
+    {
+      "label": "Erizo",
+      "clue": "Espinas"
+    },
+    {
+      "label": "Cisne",
+      "clue": "Elegante"
+    },
+    {
+      "label": "Gorila",
+      "clue": "Fuerte"
+    },
+    {
+      "label": "Alce",
+      "clue": "Astas"
+    }
+  ],
+  "objects": [
+    {
+      "label": "Celular",
+      "clue": "Pantalla"
+    },
+    {
+      "label": "Laptop",
+      "clue": "Teclado"
+    },
+    {
+      "label": "Televisor",
+      "clue": "Canales"
+    },
+    {
+      "label": "Silla",
+      "clue": "Sentarse"
+    },
+    {
+      "label": "Mesa",
+      "clue": "Superficie"
+    },
+    {
+      "label": "Cama",
+      "clue": "Dormir"
+    },
+    {
+      "label": "Lámpara",
+      "clue": "Luz"
+    },
+    {
+      "label": "Reloj",
+      "clue": "Tiempo"
+    },
+    {
+      "label": "Mochila",
+      "clue": "Cargar"
+    },
+    {
+      "label": "Cuaderno",
+      "clue": "Escribir"
+    },
+    {
+      "label": "Bolígrafo",
+      "clue": "Tinta"
+    },
+    {
+      "label": "Llaves",
+      "clue": "Abrir"
+    },
+    {
+      "label": "Ventilador",
+      "clue": "Aire"
+    },
+    {
+      "label": "Audífonos",
+      "clue": "Sonido"
+    },
+    {
+      "label": "Mouse",
+      "clue": "Click"
+    },
+    {
+      "label": "Teclado",
+      "clue": "Escribir"
+    },
+    {
+      "label": "Botella",
+      "clue": "Agua"
+    },
+    {
+      "label": "Vaso",
+      "clue": "Beber"
+    },
+    {
+      "label": "Plato",
+      "clue": "Comida"
+    },
+    {
+      "label": "Cuchara",
+      "clue": "Sopa"
+    },
+    {
+      "label": "Tenedor",
+      "clue": "Pinchar"
+    },
+    {
+      "label": "Cuchillo",
+      "clue": "Cortar"
+    },
+    {
+      "label": "Escoba",
+      "clue": "Barrer"
+    },
+    {
+      "label": "Cepillo",
+      "clue": "Peinar"
+    },
+    {
+      "label": "Espejo",
+      "clue": "Reflejo"
+    },
+    {
+      "label": "Ropa",
+      "clue": "Vestir"
+    },
+    {
+      "label": "Zapatos",
+      "clue": "Caminar"
+    },
+    {
+      "label": "Sombrero",
+      "clue": "Cabeza"
+    },
+    {
+      "label": "Maleta",
+      "clue": "Viaje"
+    },
+    {
+      "label": "Cargador",
+      "clue": "Energía"
+    },
+    {
+      "label": "Paraguas",
+      "clue": "Lluvia"
+    },
+    {
+      "label": "Linterna",
+      "clue": "Oscuro"
+    },
+    {
+      "label": "Martillo",
+      "clue": "Golpear"
+    },
+    {
+      "label": "Destornillador",
+      "clue": "Tornillo"
+    },
+    {
+      "label": "Taladro",
+      "clue": "Perforar"
+    },
+    {
+      "label": "Regla",
+      "clue": "Medir"
+    },
+    {
+      "label": "Calculadora",
+      "clue": "Sumar"
+    },
+    {
+      "label": "Reloj despertador",
+      "clue": "Alarma"
+    },
+    {
+      "label": "Cámara",
+      "clue": "Foto"
+    },
+    {
+      "label": "Control remoto",
+      "clue": "Cambiar"
+    },
+    {
+      "label": "Parlante",
+      "clue": "Música"
+    },
+    {
+      "label": "Agenda",
+      "clue": "Notas"
+    },
+    {
+      "label": "Candado",
+      "clue": "Cerrar"
+    },
+    {
+      "label": "Bolso",
+      "clue": "Guardar"
+    },
+    {
+      "label": "Caja",
+      "clue": "Contener"
+    },
+    {
+      "label": "Escritorio",
+      "clue": "Trabajo"
+    },
+    {
+      "label": "Impresora",
+      "clue": "Papel"
+    }
+  ],
+  "places": [
+    {
+      "label": "Casa",
+      "clue": "Hogar"
+    },
+    {
+      "label": "Escuela",
+      "clue": "Clases"
+    },
+    {
+      "label": "Hospital",
+      "clue": "Doctores"
+    },
+    {
+      "label": "Parque",
+      "clue": "Jugar"
+    },
+    {
+      "label": "Playa",
+      "clue": "Arena"
+    },
+    {
+      "label": "Bosque",
+      "clue": "Árboles"
+    },
+    {
+      "label": "Montaña",
+      "clue": "Altura"
+    },
+    {
+      "label": "Restaurante",
+      "clue": "Comer"
+    },
+    {
+      "label": "Cine",
+      "clue": "Película"
+    },
+    {
+      "label": "Aeropuerto",
+      "clue": "Vuelos"
+    },
+    {
+      "label": "Estadio",
+      "clue": "Deporte"
+    },
+    {
+      "label": "Biblioteca",
+      "clue": "Libros"
+    },
+    {
+      "label": "Museo",
+      "clue": "Historia"
+    },
+    {
+      "label": "Supermercado",
+      "clue": "Compras"
+    },
+    {
+      "label": "Iglesia",
+      "clue": "Rezar"
+    },
+    {
+      "label": "Banco",
+      "clue": "Dinero"
+    },
+    {
+      "label": "Oficina",
+      "clue": "Trabajo"
+    },
+    {
+      "label": "Hotel",
+      "clue": "Dormir"
+    },
+    {
+      "label": "Gimnasio",
+      "clue": "Ejercicio"
+    },
+    {
+      "label": "Piscina",
+      "clue": "Nadar"
+    },
+    {
+      "label": "Zoológico",
+      "clue": "Animales"
+    },
+    {
+      "label": "Universidad",
+      "clue": "Estudiar"
+    },
+    {
+      "label": "Fábrica",
+      "clue": "Producir"
+    },
+    {
+      "label": "Teatro",
+      "clue": "Actuar"
+    },
+    {
+      "label": "Plaza",
+      "clue": "Reunión"
+    },
+    {
+      "label": "Cafetería",
+      "clue": "Café"
+    },
+    {
+      "label": "Farmacia",
+      "clue": "Medicina"
+    },
+    {
+      "label": "Gasolinera",
+      "clue": "Combustible"
+    },
+    {
+      "label": "Puente",
+      "clue": "Cruzar"
+    },
+    {
+      "label": "Carretera",
+      "clue": "Viajar"
+    },
+    {
+      "label": "Puerto",
+      "clue": "Barcos"
+    },
+    {
+      "label": "Isla",
+      "clue": "Rodeada de agua"
+    },
+    {
+      "label": "Desierto",
+      "clue": "Arena"
+    },
+    {
+      "label": "Selva",
+      "clue": "Húmeda"
+    },
+    {
+      "label": "Volcán",
+      "clue": "Lava"
+    },
+    {
+      "label": "Cueva",
+      "clue": "Oscura"
+    },
+    {
+      "label": "Castillo",
+      "clue": "Reyes"
+    },
+    {
+      "label": "Palacio",
+      "clue": "Realeza"
+    },
+    {
+      "label": "Mercado",
+      "clue": "Vender"
+    },
+    {
+      "label": "Terminal",
+      "clue": "Transporte"
+    },
+    {
+      "label": "Barrio",
+      "clue": "Vecinos"
+    },
+    {
+      "label": "Ciudad",
+      "clue": "Edificios"
+    },
+    {
+      "label": "Pueblo",
+      "clue": "Pequeño"
+    },
+    {
+      "label": "Granja",
+      "clue": "Animales"
+    },
+    {
+      "label": "Campo",
+      "clue": "Naturaleza"
+    },
+    {
+      "label": "Mirador",
+      "clue": "Vista"
+    },
+    {
+      "label": "Estación",
+      "clue": "Trenes"
+    },
+    {
+      "label": "Faro",
+      "clue": "Luz"
+    }
   ]
 }

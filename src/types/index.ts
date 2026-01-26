@@ -1,4 +1,4 @@
-export type Category = 'animals' | 'food'
+export type Category = 'animals' | 'objects' | 'places' | 'develop'
 
 export interface GameSettings {
   players: string[]

@@ -1,7 +1,7 @@
 import type { Game, Player, Word } from '@/types'
 import { useAtom } from 'jotai'
 import { useNavigate } from 'react-router-dom'
-import words from '@/constants/old-words.json'
+import words from '@/constants/words.json'
 import { gameState } from '@/atoms/gameState'
 import useGameSettings from '@/hooks/useGameSettings'
 
@@ -14,12 +14,26 @@ interface UseGameResult {
   changePreviewCurrentPlayer: (oldCurrentPlayer: Player) => void
 }
 
-const getRandomWordByCategories = (): Word => {
-  const categoriesLength = Object.keys(words).length
-  const category: string = Object.keys(words)[Math.floor(Math.random() * categoriesLength)]
-  // @ts-ignore
-  const relatedWords: Word[] = words[category] as Word[]
-  return relatedWords[Math.floor(Math.random() * relatedWords.length)]
+const getRandomWordByCategories = (selectedCategories: string[]): Word => {
+  // Filtrar palabras solo de las categorías seleccionadas
+  const availableWords: Word[] = []
+  
+  selectedCategories.forEach(category => {
+    if (words[category as keyof typeof words]) {
+      const categoryWords = words[category as keyof typeof words] as Word[]
+      availableWords.push(...categoryWords)
+    }
+  })
+  
+  // Si no hay palabras disponibles (no debería pasar), usar todas
+  if (availableWords.length === 0) {
+    Object.values(words).forEach(categoryWords => {
+      const wordsList = categoryWords as Word[]
+      availableWords.push(...wordsList)
+    })
+  }
+  
+  return availableWords[Math.floor(Math.random() * availableWords.length)]
 }
 
 const useGame = (): UseGameResult => {
@@ -28,7 +42,7 @@ const useGame = (): UseGameResult => {
   const { gameSettings } = useGameSettings()
 
   const initGame = () => {
-    let impostorIndexes: number[] = []
+    const impostorIndexes: number[] = []
 
     while (impostorIndexes.length < gameSettings.impostors) {
       const impostorIndex = Math.floor(Math.random() * gameSettings.players.length)
@@ -44,7 +58,7 @@ const useGame = (): UseGameResult => {
     }))
     setGame({
       players: players,
-      word: getRandomWordByCategories(),
+      word: getRandomWordByCategories(gameSettings.categories),
       preview: {
         enabled: true,
         currentPlayer: players[0],

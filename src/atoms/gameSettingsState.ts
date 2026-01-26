@@ -4,7 +4,7 @@ import { atomWithStorage } from 'jotai/utils'
 const defaultGameSettings: GameSettings = {
   players: ['Jugador 1', 'Jugador 2', 'Jugador 3'],
   impostors: 1,
-  categories: [],
+  categories: ['develop'],
   time: 60,
 }
 
