@@ -6,6 +6,7 @@ const defaultGameSettings: GameSettings = {
   impostors: 1,
   categories: [],
   time: 60,
+  wordMode: 'random',
 }
 
 export const gameSettingsState = atomWithStorage<GameSettings>(

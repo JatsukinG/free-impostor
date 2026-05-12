@@ -1,8 +1,10 @@
 import type { IconType } from 'react-icons'
 import { PiClock, PiGridFour, PiUsers } from 'react-icons/pi'
+import { TbDice, TbPencil } from 'react-icons/tb'
 import NiceModal from '@ebay/nice-modal-react'
 import ImpostorsModal from '@/modules/home/ImpostorsModal'
 import PlayersModal from '@/modules/home/PlayersModal'
+import WordModeModal from '@/modules/home/WordModeModal'
 import useGameSettings from '@/hooks/useGameSettings'
 import clsx from 'clsx'
 import { Text } from '@components'
@@ -35,6 +37,9 @@ const SettingItem = ({ value, icon: Icon, label, color, onClick }: SettingItemPr
     },
     pink: {
       icon: 'text-pink-400 bg-pink-500/20',
+    },
+    amber: {
+      icon: 'text-amber-400 bg-amber-500/20',
     },
   }
 
@@ -83,8 +88,8 @@ const GameSettings = () => {
   const { gameSettings } = useGameSettings()
   const playersLength = gameSettings.players.length
   const impostorsLength = gameSettings.impostors
+  const wordMode = gameSettings.wordMode ?? 'random'
 
-  // remove this
   const handleSettingClick = (settingName: string) => {
     console.log(`Configurando: ${settingName}`)
   }
@@ -119,6 +124,13 @@ const GameSettings = () => {
               value={`${impostorsLength} Impostor${impostorsLength > 1 ? 'es' : ''}`}
               color="pink"
               onClick={() => NiceModal.show(ImpostorsModal)}
+          />
+          <SettingItem
+              icon={wordMode === 'custom' ? TbPencil : TbDice}
+              label="Modo Palabra"
+              value={wordMode === 'custom' ? 'Personalizada' : 'Aleatoria'}
+              color="amber"
+              onClick={() => NiceModal.show(WordModeModal)}
           />
           <SettingItem
               icon={PiGridFour}

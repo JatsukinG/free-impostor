@@ -7,7 +7,7 @@ import useGameSettings from '@/hooks/useGameSettings'
 
 interface UseGameResult {
   game: Game | null
-  initGame: () => void
+  initGame: (customWord?: string) => void
   initVote: () => void
   resetVote: () => void
   voteForPlayer: (player: Player) => void
@@ -27,7 +27,7 @@ const useGame = (): UseGameResult => {
   const [game, setGame] = useAtom(gameState)
   const { gameSettings } = useGameSettings()
 
-  const initGame = () => {
+  const initGame = (customWord?: string) => {
     let impostorIndexes: number[] = []
 
     while (impostorIndexes.length < gameSettings.impostors) {
@@ -42,9 +42,14 @@ const useGame = (): UseGameResult => {
       isImpostor: impostorIndexes.includes(i),
       index: i,
     }))
+
+    const word: Word = customWord
+      ? { label: customWord, clue: '' }
+      : getRandomWordByCategories()
+
     setGame({
       players: players,
-      word: getRandomWordByCategories(),
+      word,
       preview: {
         enabled: true,
         currentPlayer: players[0],

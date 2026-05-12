@@ -12,10 +12,15 @@ const useGameSettings = () => {
     setGameSettings(prev => ({ ...prev, impostors: impostors }))
   }
 
+  const updateWordMode = (mode: 'random' | 'custom') => {
+    setGameSettings(prev => ({ ...prev, wordMode: mode }))
+  }
+
   return {
     gameSettings,
     updatePlayers,
     updateImpostors,
+    updateWordMode,
   }
 }
 

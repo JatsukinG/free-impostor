@@ -5,6 +5,7 @@ export interface GameSettings {
   impostors: number
   categories: Category[]
   time: number
+  wordMode: 'random' | 'custom'
 }
 
 export interface Player {
