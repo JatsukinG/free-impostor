@@ -19,14 +19,9 @@ const Welcome = () => {
 
   return (
     <div className="w-full flex flex-col items-center px-8">
-      <h1 className="mt-12 text-4xl uppercase font-bold text-transparent bg-clip-text bg-gradient-to-tr from-violet-800 to-purple-400">
+      <h1 className="my-12 text-4xl uppercase font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-violet-800 to-purple-400">
         Impostor
       </h1>
-      <img
-        alt="detective"
-        src="/imp.png"
-        className="my-8 text-red-400 w-32"
-      />
       <NiceButton onClick={handleStart}>
         ¡Comenzar Juego!
       </NiceButton>

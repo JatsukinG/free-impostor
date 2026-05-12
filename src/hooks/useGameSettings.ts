@@ -1,5 +1,6 @@
 import { useAtom } from 'jotai'
 import { gameSettingsState } from '@/atoms/gameSettingsState'
+import type { Category } from '@/types'
 
 const useGameSettings = () => {
   const [gameSettings, setGameSettings] = useAtom(gameSettingsState)
@@ -12,6 +13,10 @@ const useGameSettings = () => {
     setGameSettings(prev => ({ ...prev, impostors: impostors }))
   }
 
+  const updateCategories = (categories: Category[]) => {
+    setGameSettings(prev => ({ ...prev, categories: categories }))
+  }
+
   const updateWordMode = (mode: 'random' | 'custom') => {
     setGameSettings(prev => ({ ...prev, wordMode: mode }))
   }
@@ -20,6 +25,7 @@ const useGameSettings = () => {
     gameSettings,
     updatePlayers,
     updateImpostors,
+    updateCategories,
     updateWordMode,
   }
 }

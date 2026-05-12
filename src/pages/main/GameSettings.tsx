@@ -1,7 +1,8 @@
 import type { IconType } from 'react-icons'
-import { PiClock, PiGridFour, PiUsers } from 'react-icons/pi'
-import { TbDice, TbPencil } from 'react-icons/tb'
+import { PiGridFour, PiUsers } from 'react-icons/pi'
+import { TbDice, TbPencil, TbSettings } from 'react-icons/tb'
 import NiceModal from '@ebay/nice-modal-react'
+import CategoriesModal from '@/modules/home/CategoriesModal'
 import ImpostorsModal from '@/modules/home/ImpostorsModal'
 import PlayersModal from '@/modules/home/PlayersModal'
 import WordModeModal from '@/modules/home/WordModeModal'
@@ -9,7 +10,6 @@ import useGameSettings from '@/hooks/useGameSettings'
 import clsx from 'clsx'
 import { Text } from '@components'
 import { FaAngleRight } from 'react-icons/fa'
-import { TbSettings } from 'react-icons/tb'
 import ToggleDarkModeButton from '@/layouts/main/components/ToggleDarkModeButton'
 
 interface SettingItemProps {
@@ -61,7 +61,7 @@ const SettingItem = ({ value, icon: Icon, label, color, onClick }: SettingItemPr
       >
         <div className="flex items-center gap-3">
           <div className={`
-          ${colors.icon} 
+          ${colors.icon}
           p-2 rounded-lg
           group-hover:scale-110 transition-transform duration-300
         `}>
@@ -88,15 +88,11 @@ const GameSettings = () => {
   const { gameSettings } = useGameSettings()
   const playersLength = gameSettings.players.length
   const impostorsLength = gameSettings.impostors
+  const categoriesLength = gameSettings.categories.length
   const wordMode = gameSettings.wordMode ?? 'random'
-
-  const handleSettingClick = (settingName: string) => {
-    console.log(`Configurando: ${settingName}`)
-  }
 
   return (
       <div className="px-4 py-6">
-        {/* Título mejorado */}
         <div className="flex items-center gap-3 mb-6">
           <div
               className="p-2 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg shadow-lg shadow-violet-500/30">
@@ -109,7 +105,6 @@ const GameSettings = () => {
           </div>
         </div>
 
-        {/* Lista de configuraciones */}
         <div className="flex flex-col gap-3">
           <SettingItem
               icon={PiUsers}
@@ -135,16 +130,9 @@ const GameSettings = () => {
           <SettingItem
               icon={PiGridFour}
               label="Categorías"
-              value="3 Categorías"
+              value={`${categoriesLength} Categoría${categoriesLength > 1 ? 's' : ''}`}
               color="blue"
-              onClick={() => handleSettingClick('categorias')}
-          />
-          <SettingItem
-              icon={PiClock}
-              label="Tiempo"
-              value="60 segundos"
-              color="emerald"
-              onClick={() => handleSettingClick('tiempo')}
+              onClick={() => NiceModal.show(CategoriesModal)}
           />
         </div>
         <div className="mt-2 p-2 flex items-center justify-between">
